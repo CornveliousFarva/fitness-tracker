@@ -1,9 +1,10 @@
+const router = require('express').Router()
+
 // Dependencies
 const Workout = require('../models/workout-model.js')
 
 //Routes
-module.exports = function(app){
-    app.get("/api/all", function(req, res) {
+    router.get("/api/all", function(req, res) {
 
         // Finding all Workouts, and then returning them to the user as JSON.
         // Sequelize queries are asynchronous, which helps with perceived speed.
@@ -17,7 +18,7 @@ module.exports = function(app){
       });
     
       // Add a Workout
-      app.post("/api/new", function(req, res) {
+      router.post("/api/new", function(req, res) {
     
         console.log("Workout Data:");
         console.log(req.body);
@@ -32,6 +33,4 @@ module.exports = function(app){
         });
     
       });
-    
-    };
-};
+    module.exports = router
