@@ -1,4 +1,4 @@
-const workoutAPI = {
+const API = {
   async getLastWorkout() {
     let res;
     try {
@@ -42,3 +42,4 @@ const workoutAPI = {
     return json;
   },
 };
+
